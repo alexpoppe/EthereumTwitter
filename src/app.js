@@ -80,7 +80,7 @@ App = {
             // Create the html for the task
             const $newTaskTemplate = $taskTemplate.clone()
             $newTaskTemplate.find('.content').html(tweetContent)
-            $newTaskTemplate.find('.account').html(App.account)
+            $newTaskTemplate.find('.account').html(tweetAccount)
             $newTaskTemplate.find('input')
                             .prop('name', tweetId)
                             // .prop('checked', taskCompleted)
@@ -97,7 +97,7 @@ App = {
     createTweet: async () => {
         App.setLoading(true)
         const content = $('#newTweet').val()
-        await App.twitter.createTweet(content)
+        await App.twitter.createTweet(content, App.account)
         window.location.reload()
     },
 
@@ -121,82 +121,3 @@ $(() => {
         App.load()
     })
 })
-    //
-    // render: async () => {
-    //     if (App.loading) {
-    //         return
-    //     }
-    //
-    //     // Update app loading state
-    //     App.setLoading(true)
-    //
-    //     // Render account
-    //     $('#account').html(App.account)
-    //
-    //     // Render Tweets
-    //     await App.renderTweets()
-    //
-    //     App.setLoading(false)
-    // },
-    //
-    // renderTweets: async () => {
-    //     // Load the total task count from the blockchain
-    //     const tweetCount = await App.twitter.tweetCount()
-    //     const $taskTemplate = $('.taskTemplate')
-    //     console.log(tweetCount.toNumber())
-    //     // Render out each task with a new task template
-    //     for (var i = 1; i <= tweetCount; i++) {
-    //         // Fetch the task data from the blockchain
-    //         const tweet = await App.twitter.tweets(i)
-    //         console.log(tweet)
-    //         const tweetId = tweet[0].toNumber()
-    //         const tweetContent = tweet[1]
-    //         console.log(tweetContent)
-    //         // const taskCompleted = task[2]
-    //
-    //         // Create the html for the task
-    //         const $newTaskTemplate = $taskTemplate.clone()
-    //         $newTaskTemplate.find('.content').html(tweetContent)
-    //         // $newTaskTemplate.find('input')
-    //         //                 .prop('name', tweetId)
-    //                         // .prop('checked', taskCompleted)
-    //                         // .on('click', App.toggleCompleted)
-    //
-    //         // Put the task in the correct list
-    //         // if (taskCompleted) {
-    //         //     $('#completedTaskList').append($newTaskTemplate)
-    //         // } else {
-    //         //     $('#taskList').append($newTaskTemplate)
-    //         // }
-    //
-    //         // Show the task
-    //         $newTaskTemplate.show()
-    //     }
-    // },
-
-    // createTask: async () => {
-    //     App.setLoading(true)
-    //     const content = $('#newTask').val()
-    //     await App.todoList.createTask(content)
-    //     window.location.reload()
-    // },
-
-    // toggleCompleted: async (e) => {
-    //     App.setLoading(true)
-    //     const taskId = e.target.name
-    //     await App.todoList.toggleCompleted(taskId)
-    //     window.location.reload()
-    // },
-    //
-    // setLoading: (boolean) => {
-    //     App.loading = boolean
-    //     const loader = $('#loader')
-    //     const content = $('#content')
-    //     if (boolean) {
-    //       loader.show()
-    //       content.hide()
-    //     } else {
-    //       loader.hide()
-    //       content.show()
-    //     }
-    //   }

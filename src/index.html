@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Dapp University | Todo List</title>
+    <title>Alexander Poppe | Twitter</title>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,18 +32,30 @@
       }
 
       ul {
-        margin-bottom: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
       }
 
-      #completedTaskList .content {
+      div {
+      }
+      .taskTemplate {
+          margin-top:  20px;
+          box-sizing: border-box;
+          width: 500px;
+          height: 100px;
+          padding: 10px;
+          border: 3px solid black;
+          background: white;
+      }
+
+      #tweets .account {
         color: grey;
-        text-decoration: line-through;
       }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://www.dappuniversity.com/free-download" target="_blank">Dapp University | Todo List</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://www.linkedin.com/in/alexanderpoppe/" target="_blank"> Riad Alexander Poppe | Twitter</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
           <small><a class="nav-link" href="#"><span id="account"></span></a></small>
@@ -65,13 +77,11 @@
               <div class="taskTemplate" class="checkbox" style="display: none">
                 <label>
 <!--                  <input type="checkbox" />-->
-                  <span class="content">Task content goes here...</span>
-                    <span class="account">Account information goes here...</span>
+                  <span class="account"></span><br />
+                  <span class="content"></span>
                 </label>
               </div>
             </ul>
-<!--            <ul id="completedTaskList" class="list-unstyled">-->
-<!--            </ul>-->
           </div>
         </main>
       </div>

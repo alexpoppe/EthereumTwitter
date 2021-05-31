@@ -12,12 +12,12 @@ contract Twitter {
     mapping(uint => Tweet) public tweets;
 
     constructor() public {
-        createTweet("my first Tweet");
+//        createTweet("my first Tweet", "my first account");
     }
 
-    function createTweet(string memory _content, string memory account) public {
+    function createTweet(string memory _content, string memory _account) public {
         tweetCount ++;
-        tweets[tweetCount] = Tweet(tweetCount, _content, "MyAccount");
+        tweets[tweetCount] = Tweet(tweetCount, _content, _account);
     }
 
 
